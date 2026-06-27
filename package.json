@@ -1,0 +1,65 @@
+{
+  "name": "elizaos-plugin-true402",
+  "version": "0.1.0",
+  "description": "ElizaOS plugin: pre-trade rug/honeypot safety for Base tokens via true402 — pay-per-call over x402, no API key.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@elizaos/core": ">=1.0.0"
+  },
+  "dependencies": {
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@elizaos/core": ">=1.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": [
+    "elizaos",
+    "elizaos-plugin",
+    "plugin",
+    "x402",
+    "base",
+    "rug-check",
+    "honeypot",
+    "token-safety",
+    "true402",
+    "defai"
+  ],
+  "agentConfig": {
+    "pluginType": "elizaos:plugin:1.0.0",
+    "pluginParameters": {
+      "TRUE402_PAYER_PRIVATE_KEY": {
+        "type": "string",
+        "description": "Base wallet private key (holds a little USDC) used to pay per check",
+        "sensitive": true
+      },
+      "TRUE402_BASE_URL": {
+        "type": "string",
+        "description": "Override the true402 API base (default https://true402.dev/api)",
+        "sensitive": false
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/true402/elizaos-plugin-true402.git"
+  },
+  "homepage": "https://true402.dev"
+}
