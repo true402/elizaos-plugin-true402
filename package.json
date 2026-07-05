@@ -1,7 +1,7 @@
 {
   "name": "elizaos-plugin-true402",
-  "version": "0.1.0",
-  "description": "ElizaOS plugin: pre-trade rug/honeypot safety for Base tokens via true402 — pay-per-call over x402, no API key.",
+  "version": "1.0.0",
+  "description": "ElizaOS plugin: pre-trade rug/honeypot safety for Base tokens via true402 \u2014 pay-per-call over x402, no API key.",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -56,10 +56,5 @@
         "sensitive": false
       }
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/true402/elizaos-plugin-true402.git"
-  },
-  "homepage": "https://true402.dev"
+  }
 }

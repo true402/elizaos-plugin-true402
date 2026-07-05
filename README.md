@@ -1,5 +1,7 @@
 # elizaos-plugin-true402
 
+[![npm version](https://img.shields.io/npm/v/elizaos-plugin-true402)](https://www.npmjs.com/package/elizaos-plugin-true402) &nbsp; **Stable · production-ready** — semver-stable public API (v1.0).
+
 A pre-trade **rug/honeypot guard** for ElizaOS agents. Before your agent buys a Base ERC-20, it asks
 **true402** whether the token can actually be *sold* — an on-chain buy/sell simulation (state-override),
 plus liquidity and ownership — and gets back an `avoid | caution | ok` verdict.
