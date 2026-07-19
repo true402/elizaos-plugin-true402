@@ -6,7 +6,7 @@ A pre-trade **rug/honeypot guard** for ElizaOS agents. Before your agent buys a 
 **true402** whether the token can actually be *sold* — an on-chain buy/sell simulation (state-override),
 plus liquidity and ownership — and gets back an `avoid | caution | ok` verdict.
 
-Pay-per-call over **x402** (~$0.005 USDC on Base). No account, no API key, no KYC — the agent's wallet is
+Pay-per-call over **x402** (~$0.01 USDC on Base). No account, no API key, no KYC — the agent's wallet is
 the auth. That's the edge over static-heuristic checkers: a honeypot can lie to a scanner, not to a
 simulation.
 
