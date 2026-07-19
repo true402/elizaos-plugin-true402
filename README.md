@@ -28,6 +28,13 @@ by the facilitator, so it only needs USDC):
 }
 ```
 
+## Configuration
+
+- `TRUE402_PAYER_PRIVATE_KEY` — Base wallet private key (holds a little USDC) used to pay per check.
+- `TRUE402_MAX_PAYMENT_USDC` — max USDC auto-paid per call (default `0.10`). Fail-closed:
+  an invalid value disables auto-pay entirely rather than becoming unlimited.
+- `TRUE402_BASE_URL` — override the true402 API base (default `https://true402.dev/api`).
+
 ## What it adds
 
 One action, `CHECK_TOKEN_SAFETY` (similes: `RUG_CHECK`, `HONEYPOT_CHECK`, `CAN_I_SELL_THIS`). It fires
@@ -54,3 +61,7 @@ npm publish            # then list it in the ElizaOS plugin registry
 
 Powered by [true402.dev](https://true402.dev) · the same check is available standalone (`examples/rug-guard`)
 and as an MCP server (`true402/mcp-server`).
+
+## License
+
+MIT
