@@ -62,6 +62,8 @@ npm publish            # then list it in the ElizaOS plugin registry
 Powered by [true402.dev](https://true402.dev) · the same check is available standalone (`examples/rug-guard`)
 and as an MCP server (`true402/mcp-server`).
 
+**Checking tokens by hand?** Send any Base token address to [@True402bot](https://t.me/True402bot) on Telegram — same on-chain checks, free, no wallet.
+
 ## License
 
 MIT
