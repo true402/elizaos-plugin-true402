@@ -41,6 +41,16 @@ One action, `CHECK_TOKEN_SAFETY` (similes: `RUG_CHECK`, `HONEYPOT_CHECK`, `CAN_I
 whenever a message contains a Base token address, runs `token-report` over x402, and replies with the
 verdict + reasons, e.g.:
 
+### `CHECK_LIQUIDITY_HISTORY` — what already happened · ~$0.005
+
+A safety check sees the present. This sees the past: every liquidity removal true402 has
+observed on the token, with amounts and transaction hashes, plus the other tokens drained in
+the **same transaction** — one actor, several pools.
+
+It matters because a live simulation is blind to it: a pool drained last month simulates
+perfectly today if someone re-seeded it. The reply carries the block range the index actually
+covers, so "none observed" is never relayed to a user as "safe".
+
 ```
 🛑 AVOID — 0x0d17c72e71e0431160fb633893e20b2ae1a395aa
 structural safety 0/100
