@@ -81,6 +81,24 @@ MCP (Claude Code / Desktop, Cursor, **Hermes**) · **Hermes Agent** · **OpenCla
 same on-chain checks, one install command each:
 **[true402.dev/integrations](https://true402.dev/integrations)**
 
+## Paying, exactly
+
+The rules below are the service's, not this package's — they bite whatever client you use, and they
+are the ones that surprise people writing their own payer.
+
+- **Pay the EXACT amount quoted in the 402.** Underpaying is rejected. **Overpaying is refused with
+  403 and never credited** — settlement submits the signed value and there is no refund path, so a
+  surplus would simply be swept. Equality is also what binds an authorization to the resource it was
+  quoted for.
+- **One authorization buys exactly one response.** A replay is refused, not double-charged.
+- **You are charged on success only.** Settlement is submitted only when the endpoint returns 2xx; if
+  it errors or times out, your signed authorization is never submitted, so there is nothing to refund.
+- Some endpoints serve a few free calls per day per client IP, with no wallet. The per-operation
+  description in the [OpenAPI spec](https://true402.dev/api/openapi.json) says which.
+
+Full rules: **[true402.dev/terms](https://true402.dev/terms)** · what is logged and kept:
+**[true402.dev/privacy](https://true402.dev/privacy)**
+
 ## License
 
 MIT
