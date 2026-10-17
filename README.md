@@ -122,7 +122,7 @@ The rules below are the service's, not this package's — they bite whatever cli
 are the ones that surprise people writing their own payer.
 
 - **Pay the EXACT amount quoted in the 402.** Underpaying is rejected. **Overpaying is refused with
-  403 and never credited** — settlement submits the signed value and there is no refund path, so a
+  402 and never credited** — settlement submits the signed value and there is no refund path, so a
   surplus would simply be swept. Equality is also what binds an authorization to the resource it was
   quoted for.
 - **One authorization buys exactly one response.** A replay is refused, not double-charged.
