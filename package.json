@@ -1,7 +1,7 @@
 {
   "name": "elizaos-plugin-true402",
-  "version": "1.1.2",
-  "description": "ElizaOS plugin: pre-trade rug/honeypot safety for Base tokens via true402 \u2014 pay-per-call over x402, no API key.",
+  "version": "1.5.3",
+  "description": "ElizaOS plugin: pre-trade rug/honeypot safety for Base tokens plus backlink/keyword SEO data via true402 — pay-per-call over x402, no API key.",
   "type": "module",
   "license": "MIT",
   "repository": "github:true402/elizaos-plugin-true402",
@@ -47,7 +47,10 @@
     "defai",
     "ai-agents",
     "agent-tools",
-    "hermes-agent"
+    "hermes-agent",
+    "seo",
+    "backlinks",
+    "keyword-research"
   ],
   "agentConfig": {
     "pluginType": "elizaos:plugin:1.0.0",
@@ -59,7 +62,7 @@
       },
       "TRUE402_MAX_PAYMENT_USDC": {
         "type": "string",
-        "description": "Max USDC the plugin will auto-pay per call (default 0.10; invalid value disables auto-pay)",
+        "description": "Max USDC the plugin will auto-pay per call (default 0.25; invalid value disables auto-pay)",
         "sensitive": false
       },
       "TRUE402_BASE_URL": {
