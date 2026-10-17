@@ -103,6 +103,12 @@ and as an MCP server (`true402/mcp-server`).
 
 **Checking tokens by hand?** Send any Base token address to [@True402bot](https://t.me/True402bot) on Telegram — same on-chain checks, free, no wallet.
 
+## Guides
+
+- [Add a rug check to an ElizaOS agent](https://true402.dev/guides/add-rug-check-elizaos-agent)
+- [Base honeypot checker (free, in the browser)](https://true402.dev/check)
+- [The x402 protocol, explained](https://true402.dev/guides/what-is-x402)
+
 ## Also available for
 
 MCP (Claude Code / Desktop, Cursor, **Hermes**) · **Hermes Agent** · **OpenClaw** · **ElizaOS** ·
