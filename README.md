@@ -44,7 +44,7 @@ Six actions:
 
 | Action | Similes | What it does | Price |
 |---|---|---|---|
-| `CHECK_TOKEN_SAFETY` | `RUG_CHECK`, `HONEYPOT_CHECK`, `CAN_I_SELL_THIS` | On-chain buy/sell simulation + liquidity + ownership → `avoid\|caution\|ok` verdict | ~$0.01 |
+| `CHECK_TOKEN_SAFETY` | `RUG_CHECK`, `HONEYPOT_CHECK`, `CAN_I_SELL_THIS` | On-chain buy/sell simulation + liquidity + ownership → `avoid\|caution\|ok` verdict | ~$0.008 |
 | `CHECK_LIQUIDITY_HISTORY` | `WAS_IT_RUGGED`, `RUG_HISTORY` | Every liquidity removal true402 has observed on a token, incl. co-drained tokens | ~$0.005 |
 | `GET_BACKLINKS` | `BACKLINK_PROFILE`, `DOMAIN_AUTHORITY` | A domain's backlink profile — referring domains/pages, dofollow split, rank, spam score | ~$0.10 |
 | `GET_KEYWORD_VOLUME` | `SEARCH_VOLUME`, `KEYWORD_CPC` | Search volume/CPC/competition for up to 200 keywords in **one** call — priced per call, not per keyword | ~$0.15 |
@@ -53,16 +53,6 @@ Six actions:
 
 `CHECK_TOKEN_SAFETY` fires whenever a message contains a Base token address, runs `token-report` over
 x402, and replies with the verdict + reasons, e.g.:
-
-### `CHECK_LIQUIDITY_HISTORY` — what already happened · ~$0.005
-
-A safety check sees the present. This sees the past: every liquidity removal true402 has
-observed on the token, with amounts and transaction hashes, plus the other tokens drained in
-the **same transaction** — one actor, several pools.
-
-It matters because a live simulation is blind to it: a pool drained last month simulates
-perfectly today if someone re-seeded it. The reply carries the block range the index actually
-covers, so "none observed" is never relayed to a user as "safe".
 
 ```
 🛑 AVOID — 0x0d17c72e71e0431160fb633893e20b2ae1a395aa
@@ -73,6 +63,16 @@ structural safety 0/100
 
 Wire it into a trading flow by gating buys on `verdict.rating` (`data.verdict` is returned on the
 `ActionResult`).
+
+### `CHECK_LIQUIDITY_HISTORY` — what already happened · ~$0.005
+
+A safety check sees the present. This sees the past: every liquidity removal true402 has
+observed on the token, with amounts and transaction hashes, plus the other tokens drained in
+the **same transaction** — one actor, several pools.
+
+It matters because a live simulation is blind to it: a pool drained last month simulates
+perfectly today if someone re-seeded it. The reply carries the block range the index actually
+covers, so "none observed" is never relayed to a user as "safe".
 
 ### Search/SEO data — `GET_BACKLINKS`, `GET_KEYWORD_VOLUME`, `GET_RANKED_KEYWORDS`, `GET_KEYWORD_IDEAS`
 
@@ -90,15 +90,7 @@ these have a free trial — they cost real money upstream and are paid from the 
 - **`GET_KEYWORD_IDEAS`** — related and long-tail keyword ideas for a seed term, each with measured
   search volume and intent, rather than ones a language model invented. ~$0.05.
 
-## Build / publish (from this dir)
-
-```bash
-npm i
-npm run build          # tsup → dist/ (esm + d.ts)
-npm publish            # then list it in the ElizaOS plugin registry
-```
-
-Powered by [true402.dev](https://true402.dev) · the same check is available standalone (`examples/rug-guard`)
+Powered by [true402.dev](https://true402.dev)
 and as an MCP server (`true402/mcp-server`).
 
 **Checking tokens by hand?** Send any Base token address to [@True402bot](https://t.me/True402bot) on Telegram — same on-chain checks, free, no wallet.
