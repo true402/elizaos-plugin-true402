@@ -1,6 +1,6 @@
 {
   "name": "elizaos-plugin-true402",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "ElizaOS plugin: pre-trade rug/honeypot safety for Base tokens plus backlink/keyword SEO data via true402 — pay-per-call over x402, no API key.",
   "type": "module",
   "license": "MIT",

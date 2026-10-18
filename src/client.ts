@@ -1,4 +1,4 @@
 // Who this client is, for the true402 update notice. Kept OUT of the shared payment code (x402.ts),
 // which is byte-identical across packages; this is the one file that differs per package.
 // `src/clients/registry.test.ts` in the true402 repo holds it equal to package.json.
-export const CLIENT = { id: 'elizaos', version: '1.5.3', package: 'elizaos-plugin-true402', install: 'npm i elizaos-plugin-true402@latest' } as const;
+export const CLIENT = { id: 'elizaos', version: '1.5.4', package: 'elizaos-plugin-true402', install: 'npm i elizaos-plugin-true402@latest' } as const;
