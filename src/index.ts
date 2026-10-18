@@ -101,7 +101,7 @@ function format(token: string, v: Verdict): string {
 
 /**
  * CHECK_TOKEN_SAFETY — before an Eliza agent buys a Base ERC-20, ask true402 whether it can actually be
- * sold (on-chain honeypot simulation + liquidity + ownership). Pay-per-call over x402 (~$0.01 USDC on
+ * sold (on-chain honeypot simulation + liquidity + ownership). Pay-per-call over x402 (~$0.008 USDC on
  * Base), no API key. Needs the secret TRUE402_PAYER_PRIVATE_KEY (a Base wallet holding a little USDC).
  */
 export const checkTokenSafetyAction: ActionV2 = {
@@ -110,7 +110,7 @@ export const checkTokenSafetyAction: ActionV2 = {
   description:
     'Check a Base ERC-20 for rug/honeypot risk via true402 before trading it. Runs an on-chain buy/sell ' +
     'simulation (proves the token is actually sellable) plus liquidity + ownership, and returns an ' +
-    'avoid|caution|ok verdict. Pay-per-call over x402 (~$0.01 USDC, no API key). Use whenever a token ' +
+    'avoid|caution|ok verdict. Pay-per-call over x402 (~$0.008 USDC, no API key). Use whenever a token ' +
     'address is about to be bought.',
   routingHint:
     'Use before the agent buys, holds, or recommends any Base ERC-20 token, or when asked whether a ' +
