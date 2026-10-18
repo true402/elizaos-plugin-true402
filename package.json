@@ -71,5 +71,8 @@
         "sensitive": false
       }
     }
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }
